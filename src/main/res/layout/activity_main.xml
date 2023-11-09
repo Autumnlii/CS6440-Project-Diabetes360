@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="John Li"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textStyle="bold"/>
+
+    <!-- Add a TextView to display the date and time -->
+    <TextView
+        android:id="@+id/date_time_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Date and Time: "
+        android:textSize="18sp"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/btn_enter_blood_sugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Blood Sugar"/>
+
+    <Button
+        android:id="@+id/btn_comparison_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Comparison Settings"/>
+
+    <Button
+        android:id="@+id/btn_compare_jobs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compare Jobs"
+        android:enabled="false"/>
+
+</LinearLayout>
