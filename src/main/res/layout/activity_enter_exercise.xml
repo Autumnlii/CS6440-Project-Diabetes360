@@ -12,7 +12,7 @@
             android:id="@+id/title_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Blood Sugar"
+            android:text="Add Exercise (minutes)"
             android:textSize="24sp"
             android:gravity="center"
             android:padding="16dp"
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:text="Value (mg/ml):" />
+            android:text="Value (minutes):" />
 
         <LinearLayout
             android:layout_width="wrap_content"

@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">>
+    tools:context=".activities.MainActivity">
 
     <TextView
         android:id="@+id/title"
@@ -31,16 +31,21 @@
         android:text="Enter Blood Sugar"/>
 
     <Button
-        android:id="@+id/btn_comparison_settings"
+        android:id="@+id/btn_enter_exercise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Comparison Settings"/>
+        android:text="Enter Exercise"/>
 
     <Button
-        android:id="@+id/btn_compare_jobs"
+        android:id="@+id/btn_enter_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compare Jobs"
-        android:enabled="false"/>
+        android:text="Enter Contact"/>
+
+    <Button
+        android:id="@+id/btn_send_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Data to Contacts"/>
 
 </LinearLayout>

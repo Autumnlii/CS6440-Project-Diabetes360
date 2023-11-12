@@ -26,7 +26,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="edu.gatech.seclass.diabetes360.activities.CurrentJobActivity"
+            android:name="edu.gatech.seclass.diabetes360.activities.EnterBloodSugarActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +39,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="edu.gatech.seclass.diabetes360.activities.EnterJobOfferActivity"
+            android:name="edu.gatech.seclass.diabetes360.activities.EnterExerciseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,7 +52,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="edu.gatech.seclass.diabetes360.activities.ComparisonSettingsActivity"
+            android:name="edu.gatech.seclass.diabetes360.activities.EnterContactActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,6 +64,19 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+<!--        <activity-->
+<!--            android:name="edu.gatech.seclass.diabetes360.activities.ComparisonSettingsActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+
+<!--            <meta-data-->
+<!--                android:name="android.app.lib_name"-->
+<!--                android:value="" />-->
+<!--        </activity>-->
     </application>
 
 </manifest>

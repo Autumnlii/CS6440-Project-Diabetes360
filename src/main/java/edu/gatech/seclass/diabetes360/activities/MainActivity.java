@@ -6,25 +6,20 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import edu.gatech.seclass.diabetes360.R;
-import edu.gatech.seclass.diabetes360.core.OfferManager;
 
 public class MainActivity extends Activity {
 
-    private Button mEnterBloodSugarButton, mComparisonSettingsButton, mCompareJobsButton;
-    OfferManager offerManager = OfferManager.getInstance();
+    private Button mEnterBloodSugarButton, mEnterExerciseButton, mEnterContact, mSendData;//, mComparisonSettingsButton, mCompareJobsButton;
 
     private TextView dateTimeTextView;
     private Handler handler = new Handler();
     private Runnable updateTimeRunnable;
-
-    protected void refresh() {
-        mCompareJobsButton.setEnabled(!offerManager.getOffers().isEmpty());
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,29 +44,50 @@ public class MainActivity extends Activity {
         handler.post(updateTimeRunnable);
         // Initialize buttons
         mEnterBloodSugarButton = findViewById(R.id.btn_enter_blood_sugar);
-        mComparisonSettingsButton = findViewById(R.id.btn_comparison_settings);
-        mCompareJobsButton = findViewById(R.id.btn_compare_jobs);
-        this.refresh();
-
 
         // Set button click listeners
         mEnterBloodSugarButton.setOnClickListener(view -> {
             // Open job offers menu
-            Intent intent = new Intent(MainActivity.this, EnterJobOfferActivity.class);
+            Intent intent = new Intent(MainActivity.this, EnterBloodSugarActivity.class);
             startActivity(intent);
         });
 
-        mComparisonSettingsButton.setOnClickListener(view -> {
-            // Open comparison settings menu
-            Intent intent = new Intent(MainActivity.this, ComparisonSettingsActivity.class);
+        mEnterExerciseButton = findViewById(R.id.btn_enter_exercise);
+
+        // Set button click listeners
+        mEnterExerciseButton.setOnClickListener(view -> {
+            // Open job offers menu
+            Intent intent = new Intent(MainActivity.this, EnterExerciseActivity.class);
             startActivity(intent);
         });
 
-        mCompareJobsButton.setOnClickListener(view -> {
-            // Open compare jobs menu
-            Intent intent = new Intent(MainActivity.this, CurrentJobActivity.class);
+        mEnterContact = findViewById(R.id.btn_enter_contact);
+
+        // Set button click listeners
+        mEnterContact.setOnClickListener(view -> {
+            // Open job offers menu
+            Intent intent = new Intent(MainActivity.this, EnterContactActivity.class);
             startActivity(intent);
         });
+
+        mSendData = findViewById(R.id.btn_send_data);
+
+        // Set button click listeners
+        mSendData.setOnClickListener(view -> {
+            Toast.makeText(MainActivity.this, "Sending health data to contacts", Toast.LENGTH_SHORT).show();
+        });
+
+//        mComparisonSettingsButton.setOnClickListener(view -> {
+//            // Open comparison settings menu
+//            Intent intent = new Intent(MainActivity.this, ComparisonSettingsActivity.class);
+//            startActivity(intent);
+//        });
+
+//        mCompareJobsButton.setOnClickListener(view -> {
+//            // Open compare jobs menu
+//            Intent intent = new Intent(MainActivity.this, CurrentJobActivity.class);
+//            startActivity(intent);
+//        });
     }
 
 

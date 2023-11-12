@@ -12,32 +12,18 @@
             android:id="@+id/title_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Blood Sugar"
+            android:text="Add Contact"
             android:textSize="24sp"
             android:gravity="center"
             android:padding="16dp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/month"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:text="Month:" />
-
-        <EditText
-            android:id="@+id/day"
+            android:id="@+id/contact_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:text="Day:" />
-
-        <EditText
-            android:id="@+id/value"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:text="Value (mg/ml):" />
+            android:text="Contact email:" />
 
         <LinearLayout
             android:layout_width="wrap_content"
