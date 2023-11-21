@@ -15,7 +15,7 @@ import edu.gatech.seclass.diabetes360.R;
 
 public class MainActivity extends Activity {
 
-    private Button mEnterBloodSugarButton, mEnterExerciseButton, mEnterContact, mSendData;//, mComparisonSettingsButton, mCompareJobsButton;
+    private Button mEnterBloodSugarButton, mEnterExerciseButton, mViewDataButton, mEnterContact, mSendData;//, mComparisonSettingsButton, mCompareJobsButton;
 
     private TextView dateTimeTextView;
     private Handler handler = new Handler();
@@ -58,6 +58,15 @@ public class MainActivity extends Activity {
         mEnterExerciseButton.setOnClickListener(view -> {
             // Open job offers menu
             Intent intent = new Intent(MainActivity.this, EnterExerciseActivity.class);
+            startActivity(intent);
+        });
+
+        mViewDataButton = findViewById(R.id.btn_view_data);
+
+        // Set button click listeners
+        mViewDataButton.setOnClickListener(view -> {
+            // Open job offers menu
+            Intent intent = new Intent(MainActivity.this, ViewDataActivity.class);
             startActivity(intent);
         });
 

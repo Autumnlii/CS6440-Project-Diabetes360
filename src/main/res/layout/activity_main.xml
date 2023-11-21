@@ -37,6 +37,12 @@
         android:text="Enter Exercise"/>
 
     <Button
+        android:id="@+id/btn_view_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Historical Data"/>
+
+    <Button
         android:id="@+id/btn_enter_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
