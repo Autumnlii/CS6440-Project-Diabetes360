@@ -1,98 +1,68 @@
 package edu.gatech.seclass.diabetes360.activities;
 
-import android.app.Activity;
-import android.content.ContentValues;
-import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.ValueFormatter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import edu.gatech.seclass.diabetes360.R;
-import edu.gatech.seclass.diabetes360.core.BloodSugarEntry;
-import edu.gatech.seclass.diabetes360.core.DatabaseHelper;
 
-public class ViewDataActivity extends Activity {
-
-    DatabaseHelper databaseHelper = new DatabaseHelper(this);
-
-    private EditText monthEditText;
-    private EditText dayEditText;
-    private EditText valueEditText;
+public class ViewDataActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enter_blood_sugar);
-        monthEditText = findViewById(R.id.month);
-        dayEditText = findViewById(R.id.day);
-        valueEditText = findViewById(R.id.value);
+        setContentView(R.layout.activity_view_data);
 
-        Button saveAndCloseButton = findViewById(R.id.save_and_close);
-        saveAndCloseButton.setOnClickListener(view -> {
-            if (addBloodSugar()) {
-                Intent intent = new Intent(ViewDataActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+        LineChart lineChart = findViewById(R.id.lineChart);
+
+        // Sample data
+        List<Entry> entries = new ArrayList<>();
+        entries.add(new Entry(1, 30));
+        entries.add(new Entry(2, 50));
+        entries.add(new Entry(3, 80));
+        entries.add(new Entry(4, 60));
+        entries.add(new Entry(5, 40));
+
+        LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
+        dataSet.setColor(Color.BLUE);
+        dataSet.setValueTextColor(Color.RED);
+
+        LineData lineData = new LineData(dataSet);
+        lineChart.setData(lineData);
+
+        // Customize chart
+        lineChart.getDescription().setText("Sample Line Chart");
+        lineChart.setNoDataText("No data available");
+        lineChart.setNoDataTextColor(Color.BLACK);
+
+        XAxis xAxis = lineChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getAxisLabel(float value, AxisBase axis) {
+                return String.valueOf((int) value);
             }
         });
-        Button saveAndNewButton = findViewById(R.id.save_and_create_another);
-        saveAndNewButton.setOnClickListener(view -> {
-            if (addBloodSugar()) {
-                Toast.makeText(ViewDataActivity.this, "Blood Sugar Entry saved successfully", Toast.LENGTH_SHORT).show();
-                monthEditText.setText("");
-                dayEditText.setText("");
-                valueEditText.setText("");
-            }
-        });
 
-        Button cancel = findViewById(R.id.cancel_button);
-        cancel.setOnClickListener(view -> {
-            Intent intent = new Intent(ViewDataActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        });
-    }
+        YAxis yAxisLeft = lineChart.getAxisLeft();
+        YAxis yAxisRight = lineChart.getAxisRight();
+        yAxisRight.setEnabled(false);
 
-    private boolean addBloodSugar() {
-        String month = monthEditText.getText().toString().trim();
-        String day = dayEditText.getText().toString().trim();
-        String value = valueEditText.getText().toString().trim();
-
-        int validatedMonth;
-        int validatedDay;
-        int validatedValue;
-
-        try {
-            // Validate the values
-            validatedMonth = Integer.parseInt(month);
-            validatedDay = Integer.parseInt(day);
-            validatedValue = Integer.parseInt(value);
-
-        } catch (Exception e) {
-            Toast.makeText(ViewDataActivity.this, "Please enter all required " +
-                    "fields in the correct format", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-
-        // Create a new Blood Sugar object
-        BloodSugarEntry offer = new BloodSugarEntry(validatedMonth, validatedDay, validatedValue);
-
-        // Open the database for reading and writing
-        SQLiteDatabase db = databaseHelper.getWritableDatabase();
-        databaseHelper.onCreate(db);
-
-        // Perform database operations (e.g., insert, query, update, delete)
-        ContentValues values = new ContentValues();
-        values.put(DatabaseHelper.MONTH, validatedMonth);
-        values.put(DatabaseHelper.DAY, validatedDay);
-        values.put(DatabaseHelper.VALUE, validatedValue);
-        db.insert(DatabaseHelper.TABLE_NAME_BS, null, values);
-
-        // Close the database when done
-        db.close();
-        databaseHelper.debug(DatabaseHelper.TABLE_NAME_BS);
-        return true;
+        // Refresh chart
+        lineChart.invalidate();
     }
 }
