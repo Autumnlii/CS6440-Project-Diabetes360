@@ -37,10 +37,16 @@
         android:text="Enter Exercise"/>
 
     <Button
-        android:id="@+id/btn_view_data"
+        android:id="@+id/btn_view_blood_sugar_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Historical Data"/>
+        android:text="View Blood Sugar Data (Last 7 days)"/>
+
+    <Button
+        android:id="@+id/btn_view_exercise_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Exercise Data (Last 7 days)"/>
 
     <Button
         android:id="@+id/btn_enter_contact"

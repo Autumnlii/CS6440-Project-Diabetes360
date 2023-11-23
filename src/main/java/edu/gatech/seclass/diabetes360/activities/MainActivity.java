@@ -15,7 +15,8 @@ import edu.gatech.seclass.diabetes360.R;
 
 public class MainActivity extends Activity {
 
-    private Button mEnterBloodSugarButton, mEnterExerciseButton, mViewDataButton, mEnterContact, mSendData;//, mComparisonSettingsButton, mCompareJobsButton;
+    private Button mEnterBloodSugarButton, mEnterExerciseButton,
+            mViewBloodSugarDataButton, mViewExerciseDataButton, mEnterContact, mSendData;//, mComparisonSettingsButton, mCompareJobsButton;
 
     private TextView dateTimeTextView;
     private Handler handler = new Handler();
@@ -61,14 +62,24 @@ public class MainActivity extends Activity {
             startActivity(intent);
         });
 
-        mViewDataButton = findViewById(R.id.btn_view_data);
+        mViewBloodSugarDataButton = findViewById(R.id.btn_view_blood_sugar_data);
 
         // Set button click listeners
-        mViewDataButton.setOnClickListener(view -> {
+        mViewBloodSugarDataButton.setOnClickListener(view -> {
             // Open job offers menu
-            Intent intent = new Intent(MainActivity.this, ViewDataActivity.class);
+            Intent intent = new Intent(MainActivity.this, ViewBloodSugarDataActivity.class);
             startActivity(intent);
         });
+
+        mViewExerciseDataButton = findViewById(R.id.btn_view_exercise_data);
+
+        // Set button click listeners
+        mViewExerciseDataButton.setOnClickListener(view -> {
+            // Open job offers menu
+            Intent intent = new Intent(MainActivity.this, ViewExerciseDataActivity.class);
+            startActivity(intent);
+        });
+
 
         mEnterContact = findViewById(R.id.btn_enter_contact);
 
@@ -85,18 +96,6 @@ public class MainActivity extends Activity {
         mSendData.setOnClickListener(view -> {
             Toast.makeText(MainActivity.this, "Sending health data to contacts", Toast.LENGTH_SHORT).show();
         });
-
-//        mComparisonSettingsButton.setOnClickListener(view -> {
-//            // Open comparison settings menu
-//            Intent intent = new Intent(MainActivity.this, ComparisonSettingsActivity.class);
-//            startActivity(intent);
-//        });
-
-//        mCompareJobsButton.setOnClickListener(view -> {
-//            // Open compare jobs menu
-//            Intent intent = new Intent(MainActivity.this, CurrentJobActivity.class);
-//            startActivity(intent);
-//        });
     }
 
 

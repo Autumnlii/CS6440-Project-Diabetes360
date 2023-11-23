@@ -46,7 +46,7 @@
             android:id="@+id/value_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Value (mg/ml):" />
+            android:text="Value (mg/dl):" />
 
         <EditText
             android:id="@+id/value"

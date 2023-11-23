@@ -2,7 +2,6 @@ package edu.gatech.seclass.diabetes360.activities;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,24 +19,26 @@ import java.util.List;
 
 import edu.gatech.seclass.diabetes360.R;
 
-public class ViewDataActivity extends AppCompatActivity {
+public class ViewExerciseDataActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_data);
+        setContentView(R.layout.activity_view_exercise_data);
 
         LineChart lineChart = findViewById(R.id.lineChart);
 
         // Sample data
         List<Entry> entries = new ArrayList<>();
-        entries.add(new Entry(1, 30));
-        entries.add(new Entry(2, 50));
-        entries.add(new Entry(3, 80));
+        entries.add(new Entry(1, 20));
+        entries.add(new Entry(2, 45));
+        entries.add(new Entry(3, 30));
         entries.add(new Entry(4, 60));
         entries.add(new Entry(5, 40));
+        entries.add(new Entry(6, 0));
+        entries.add(new Entry(7, 20));
 
-        LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
+        LineDataSet dataSet = new LineDataSet(entries, "Exercise Data"); // add entries to dataset
         dataSet.setColor(Color.BLUE);
         dataSet.setValueTextColor(Color.RED);
 
@@ -45,7 +46,7 @@ public class ViewDataActivity extends AppCompatActivity {
         lineChart.setData(lineData);
 
         // Customize chart
-        lineChart.getDescription().setText("Sample Line Chart");
+        lineChart.getDescription().setText("Last 7 Days Exercise Line Chart");
         lineChart.setNoDataText("No data available");
         lineChart.setNoDataTextColor(Color.BLACK);
 
