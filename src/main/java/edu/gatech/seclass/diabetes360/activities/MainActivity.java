@@ -15,7 +15,7 @@ import edu.gatech.seclass.diabetes360.R;
 
 public class MainActivity extends Activity {
 
-    private Button mEnterBloodSugarButton, mEnterExerciseButton,
+    private Button mEnterBloodSugarButton, mEnterExerciseButton, mEnterMedicationButton,
             mViewBloodSugarDataButton, mViewExerciseDataButton, mEnterContact, mSendData;//, mComparisonSettingsButton, mCompareJobsButton;
 
     private TextView dateTimeTextView;
@@ -48,7 +48,6 @@ public class MainActivity extends Activity {
 
         // Set button click listeners
         mEnterBloodSugarButton.setOnClickListener(view -> {
-            // Open job offers menu
             Intent intent = new Intent(MainActivity.this, EnterBloodSugarActivity.class);
             startActivity(intent);
         });
@@ -57,8 +56,15 @@ public class MainActivity extends Activity {
 
         // Set button click listeners
         mEnterExerciseButton.setOnClickListener(view -> {
-            // Open job offers menu
             Intent intent = new Intent(MainActivity.this, EnterExerciseActivity.class);
+            startActivity(intent);
+        });
+
+        mEnterMedicationButton = findViewById(R.id.btn_enter_medication);
+
+        // Set button click listeners
+        mEnterMedicationButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, EnterMedicationActivity.class);
             startActivity(intent);
         });
 
@@ -66,7 +72,6 @@ public class MainActivity extends Activity {
 
         // Set button click listeners
         mViewBloodSugarDataButton.setOnClickListener(view -> {
-            // Open job offers menu
             Intent intent = new Intent(MainActivity.this, ViewBloodSugarDataActivity.class);
             startActivity(intent);
         });
@@ -75,7 +80,6 @@ public class MainActivity extends Activity {
 
         // Set button click listeners
         mViewExerciseDataButton.setOnClickListener(view -> {
-            // Open job offers menu
             Intent intent = new Intent(MainActivity.this, ViewExerciseDataActivity.class);
             startActivity(intent);
         });
@@ -85,7 +89,6 @@ public class MainActivity extends Activity {
 
         // Set button click listeners
         mEnterContact.setOnClickListener(view -> {
-            // Open job offers menu
             Intent intent = new Intent(MainActivity.this, EnterContactActivity.class);
             startActivity(intent);
         });

@@ -12,18 +12,11 @@
             android:id="@+id/title_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Contact"
+            android:text="Enter Medication Taken Today or Not"
             android:textSize="24sp"
             android:gravity="center"
             android:padding="16dp"
             android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/contact_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:text="Contact email:" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -35,31 +28,28 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/save_and_close"
-                    android:layout_width="0dp"
+                    android:id="@+id/yes_button"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Save &amp; Close"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp" />
+                    android:text="YES"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
 
                 <Button
-                    android:id="@+id/save_and_create_another"
-                    android:layout_width="0dp"
+                    android:id="@+id/no_button"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Save &amp; New"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp" />
+                    android:text="NO"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
 
                 <Button
                     android:id="@+id/cancel_button"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Cancel"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp" />
+                    android:gravity="center"
+                    android:layout_weight="1" />
             </LinearLayout>
 
         </LinearLayout>

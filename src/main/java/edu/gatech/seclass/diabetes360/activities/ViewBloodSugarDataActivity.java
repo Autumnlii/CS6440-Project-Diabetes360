@@ -30,9 +30,9 @@ public class ViewBloodSugarDataActivity extends AppCompatActivity {
 
         // Sample data
         List<Entry> entries = new ArrayList<>();
-        entries.add(new Entry(1, 30));
+        entries.add(new Entry(1, 60));
         entries.add(new Entry(2, 50));
-        entries.add(new Entry(3, 80));
+        entries.add(new Entry(3, 30));
         entries.add(new Entry(4, 60));
         entries.add(new Entry(5, 40));
         entries.add(new Entry(6, 30));

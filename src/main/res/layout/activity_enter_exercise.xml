@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
-        tools:context=".activities.EnterJobOfferActivity">
+        tools:context=".activities.MainActivity">
 
         <TextView
             android:id="@+id/title_input"

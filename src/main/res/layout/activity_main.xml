@@ -37,6 +37,12 @@
         android:text="Enter Exercise"/>
 
     <Button
+        android:id="@+id/btn_enter_medication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Medication Taken Today or Not"/>
+
+    <Button
         android:id="@+id/btn_view_blood_sugar_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
