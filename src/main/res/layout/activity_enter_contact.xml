@@ -18,12 +18,16 @@
             android:padding="16dp"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/contact_email_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact email:"/>
         <EditText
             android:id="@+id/contact_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:text="Contact email:" />
+            android:inputType="text"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
