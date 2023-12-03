@@ -23,6 +23,6 @@
 6. Show the past 7-days exercise trend
    - Allow users to see the historical trend of the exercise
 7. Enter contact information
-  - Specify the shared contact information   
+   - Specify the shared contact information   
 8. Email the sql queries to different people
 
