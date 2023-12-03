@@ -13,17 +13,16 @@
 
 # Use cases of the application
 1. Enter blood sugar level
-   1. Specify the value and the date (month/day)
+   - Specify the value and the date (month/day)
 2. Enter how much exercise done 
-   1. Current total
-   2. new Exercise
-   3. Specify the value (minutes) and the date (month/day)
-3. Enter how much portions in the following categories: fish, veggies, fruits, red meat
-4. in the end, will want to plot the historical data
-   1. Note that need to add `maven { url 'https://jitpack.io' }` to settings.gradle
-   2. and `	implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'` to dependencies in app/build.gradle
-5. Email the sql queries to different people
-6. Set a reminder/Enter times to take medicine to take the medicine at x intervals (pop up)
-   1. Set the date and time
-   2. which medicine, dosage, with/without food
-   3. 
+   - Specify the value (minutes) and the date (month/day)
+3. Enter if the user takes the medications today
+   - Choose Yes or No to indicate whether the user takes the medications. 
+5. Show past 7 days blood sugar level
+   - Allow users to see the historical trend of the blood sugar
+6. Show the past 7-days exercise trend
+  - Allow users to see the historical trend of the exercise
+7. Enter contact information
+ - Specify the shared contact information   
+8. Email the sql queries to different people
+
